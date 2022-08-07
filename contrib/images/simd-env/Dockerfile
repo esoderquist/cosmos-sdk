@@ -7,7 +7,7 @@ RUN go mod download
 COPY ./ /work
 RUN LEDGER_ENABLED=false make clean build
 
-FROM alpine:3.14 AS run
+FROM alpine:3.15 AS run
 RUN apk add bash curl jq
 COPY contrib/images/simd-env/wrapper.sh /usr/bin/wrapper.sh
 
