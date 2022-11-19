@@ -38,9 +38,25 @@ Ref: https://keepachangelog.com/en/1.0.0/
 ## [Unreleased]
 * Cosmos sdk v0.45.9 with terra patches.  We should audit the changes, and then deploy.
 
+## v0.45.11 - 2022-11-09
+
 ### Improvements
 
+* [#13896](https://github.com/cosmos/cosmos-sdk/pull/13896) Queries on pruned height returns error instead of empty values.
+* (deps) Bump Tendermint version to [v0.34.23](https://github.com/tendermint/tendermint/releases/tag/v0.34.23).
 * (deps) Bump IAVL version to [v0.19.4](https://github.com/cosmos/iavl/releases/tag/v0.19.4).
+
+### Bug Fixes
+
+* [#13673](https://github.com/cosmos/cosmos-sdk/pull/13673) Fix `--dry-run` flag not working when using tx command.
+
+### CLI Breaking Changes
+
+* [#13656](https://github.com/cosmos/cosmos-sdk/pull/13660) Rename `server.FlagIAVLFastNode` to `server.FlagDisableIAVLFastNode` for clarity.
+
+### API Breaking Changes
+
+* [#13673](https://github.com/cosmos/cosmos-sdk/pull/13673) The `GetFromFields` function now takes `Context` as an argument and removes `genOnly`.
 
 ## v0.45.10 - 2022-10-24
 
@@ -113,12 +129,7 @@ Reverted #12437 due to API breaking changes.
 
 ### Bug Fixes
 
-* [#13673](https://github.com/cosmos/cosmos-sdk/pull/13673) Fix `--dry-run` flag not working when using tx command.
 * [#13046](https://github.com/cosmos/cosmos-sdk/pull/13046) Fix missing return statement in BaseApp.Query.
-
-### API Breaking Changes
-
-* [#13673](https://github.com/cosmos/cosmos-sdk/pull/13673) The `GetFromFields` function now takes `Context` as an argument and removes `genOnly`.
 
 ## v0.45.7 - 2022-08-04
 
